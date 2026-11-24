@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TimeCapsule | Letters to Tomorrow</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <a href="#" class="logo">Time<span>Capsule.</span></a>
+
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#story">Our Story</a>
+            <a href="#memories">Memories</a>
+            <button class="nav-button" id="nav-create">Create Capsule</button>
+        </div>
+    </nav>
+
+    <header class="hero" id="home">
+        <div class="hero-content">
+            <p class="eyebrow">A LITTLE GIFT FOR YOUR FUTURE SELF</p>
+
+            <h1>Your memories.<br>
+                Your future.<br>
+                <span>One moment at a time.</span>
+            </h1>
+
+            <p class="hero-description">
+                Write a letter today. Seal a memory.
+                Let your future self discover it when the time is right.
+            </p>
+
+            <div class="hero-buttons">
+                <button class="primary-button" id="hero-create">
+                    Create Your First Capsule
+                </button>
+
+                <a href="#story" class="secondary-button">Discover Our Story ↓</a>
+            </div>
+        </div>
+
+        <div class="hero-visual">
+            <div class="orbit orbit-one"></div>
+            <div class="orbit orbit-two"></div>
+
+            <div class="hero-envelope">
+                <div class="envelope-flap"></div>
+                <div class="envelope-body">
+                    <span>For my future self</span>
+                    <div class="envelope-seal">✦</div>
+                </div>
+            </div>
+
+            <p class="floating-note">Dear Tomorrow...</p>
+        </div>
+    </header>
+
+    <section class="story-section" id="story">
+        <p class="eyebrow">THE IDEA BEHIND THE MAGIC</p>
+
+        <h2>Some moments deserve<br>to wait for tomorrow.</h2>
+
+        <p class="section-description">
+            Life moves quickly. TimeCapsule gives you a place to
+            preserve your thoughts, dreams, little victories and
+            messages for the person you'll become.
+        </p>
+
+        <div class="features">
+            <article class="feature-card">
+                <span>✍</span>
+                <h3>Write Freely</h3>
+                <p>Capture your thoughts, dreams and unforgettable moments.</p>
+            </article>
+
+            <article class="feature-card">
+                <span>⌛</span>
+                <h3>Choose Your Time</h3>
+                <p>Decide when your future self can open your letter.</p>
+            </article>
+
+            <article class="feature-card">
+                <span>♡</span>
+                <h3>Keep Memories</h3>
+                <p>Attach a photograph and give your memories a face.</p>
+            </article>
+        </div>
+    </section>
+
+    <section class="memories-section" id="memories">
+        <div class="section-heading">
+            <div>
+                <p class="eyebrow">YOUR PERSONAL ARCHIVE</p>
+                <h2>Memory Collection</h2>
+            </div>
+
+            <button class="primary-button" id="create-btn">
+                + New Capsule
+            </button>
+        </div>
+
+        <div id="capsule-list" class="capsule-grid"></div>
+    </section>
+
+    <section class="create-section">
+        <p class="eyebrow">A MESSAGE ACROSS TIME</p>
+        <h2>Tomorrow is waiting<br>for your words.</h2>
+        <button class="primary-button" id="footer-create">
+            Write Your Letter ✉
+        </button>
+    </section>
+
+    <footer>
+        <a href="#" class="logo">Time<span>Capsule.</span></a>
+        <p>Made with care, for moments that matter.</p>
+        <p class="copyright">© 2026 TimeCapsule. All memories deserve a tomorrow.</p>
+    </footer>
+
+    <!-- CREATE CAPSULE MODAL -->
+
+    <div class="modal-overlay" id="capsule-modal">
+        <div class="modal-box">
+
+            <button class="close-button" id="close-modal">&times;</button>
+
+            <p class="eyebrow">A LETTER TO THE FUTURE</p>
+            <h2>Create Your Capsule</h2>
+
+            <form id="capsule-form">
+
+                <label for="capsule-title">Memory Title</label>
+                <input
+                    type="text"
+                    id="capsule-title"
+                    placeholder="A letter to my future self..."
+                    maxlength="100"
+                    required
+                >
+
+                <label for="capsule-message">Your Message</label>
+                <textarea
+                    id="capsule-message"
+                    placeholder="Dear future me..."
+                    rows="5"
+                    maxlength="5000"
+                    required
+                ></textarea>
+
+                <label for="unlock-date">Unlock Date</label>
+                <input type="date" id="unlock-date" required>
+
+                <label for="capsule-photo">Add a Photograph (Optional)</label>
+                <input type="file" id="capsule-photo" accept="image/*">
+
+                <button type="submit" class="primary-button submit-button">
+                    Seal My Memory ✉
+                </button>
+
+            </form>
+        </div>
+    </div>
+
+    <!-- LETTER READING MODAL -->
+
+    <div class="modal-overlay letter-overlay" id="letter-modal">
+        <div class="letter-modal-box">
+
+            <button class="close-button" id="close-letter">&times;</button>
+
+            <div class="letter-paper">
+                <p class="letter-decoration">✦ A MESSAGE FROM THE PAST ✦</p>
+
+                <h2 id="letter-title"></h2>
+
+                <p class="letter-date" id="letter-date"></p>
+
+                <div class="letter-divider"></div>
+
+                <p id="letter-message" class="letter-message"></p>
+
+                <img id="letter-photo" class="letter-photo" alt="Attached memory">
+
+                <p class="letter-signature">With love,<br>Your past self ♡</p>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
